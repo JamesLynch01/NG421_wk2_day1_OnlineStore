@@ -14,7 +14,12 @@ export class AppComponent {
   constructor(private ProductService: ProductService){
 
   }
+
   ngOnInit() {
     this.products = this.ProductService.getProducts();
+  }
+
+  productWasAdded(product: IProduct){
+    this.ProductService.addToCart(product);
   }
 }

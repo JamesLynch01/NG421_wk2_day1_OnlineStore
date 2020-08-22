@@ -23,7 +23,7 @@
                 <!--</Carousel>-->
                 <div class="row">
                     <!--<ProductDetail>-->
-                    <app-product-detail></app-product-detail>
+                    <app-product-detail *ngFor="let product of products"(productAdded)="productWasAdded($event)" [product]="product"></app-product-detail>
                     <!--</ProductDetail>-->
 
 
