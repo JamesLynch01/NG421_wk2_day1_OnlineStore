@@ -1,21 +1,50 @@
 <div class="col-sm-4 col-lg-4 col-md-4">
     <div class="thumbnail">
-        <img src="http://placehold.it/320x150" alt=""/>
+        <img [src]="product.imgUrl" alt="" />
         <div class="caption">
-            <h4 class="pull-right">$24.99</h4>
-            <h4><a href="#">First Product</a>
+            <h4 class="pull-right">{{product.price}}</h4>
+            <h4><a href="#">{{product.name}}</a>
             </h4>
-            <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+            <p>{{product.description}}<a target="_blank" href="http://www.bootsnipp.com"></a></p>
         </div>
         <div class="ratings">
-            <p class="pull-right">15 reviews</p>
-            <p>
+            <p class="pull-right">{{product.reviews}}</p>
+            <p *ngIf="product.rating === 5">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+            </p>
+            <p *ngIf="product.rating === 4">
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-star-empty"></span>
             </p>
+            <p *ngIf="product.rating === 3">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+            </p>
+            <p *ngIf="product.rating === 2">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+            </p>
+            <p *ngIf="product.rating === 1">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+            </p>
+
         </div>
     </div>
 </div>
